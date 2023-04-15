@@ -6,6 +6,8 @@ This repository contains a comprehensive analysis of the Boston Housing dataset 
 
 The dataset used in this project is the Boston Housing Dataset, which contains information collected by the U.S Census Service concerning housing in the area of Boston, Massachusetts. The dataset has 506 samples, with 13 input features and a target variable (MEDV), which represents the median value of owner-occupied homes in $1000's.
 
+**Important Note:** The load_boston function is deprecated in scikit-learn 1.0 and will be removed in 1.2 due to ethical issues related to the dataset. It is strongly recommended to use alternative datasets like the California housing dataset or the Ames housing dataset. To run this Python program without issues, please use a scikit-learn version lower than 1.0.
+
 ## Contents
 
 The repository contains a single Python script, `boston_housing_analysis.py`, which includes the following:
