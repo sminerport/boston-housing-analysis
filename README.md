@@ -1,6 +1,6 @@
 # Boston Housing Analysis
 
-This repository contains a comprehensive analysis of the Boston Housing dataset using various regression models, including Linear Regression, Lasso Regression, and Ridge Regression. The project explores the dataset, visualizes the relationships between features and target variables, and evaluates the performance of the different regression models.
+This repository contains a comprehensive analysis of the Boston Housing dataset using various regression models, including Linear Regression, Lasso Regression, and Ridge Regression. The project explores the dataset, visualizes the relationships between features and target variables, and evaluates the performance of the different regression models, providing valuable insights into the housing market in Boston.
 
 ## Dataset
 
@@ -19,6 +19,15 @@ The repository contains a single Python script, `boston_housing_analysis.py`, wh
 5. Implementing and evaluating various regression models
 6. Calculating and visualizing regression errors and residuals
 
+## Applications
+
+The analysis of the Boston Housing dataset can be beneficial for various purposes, including:
+
+* Identifying factors that influence housing prices
+* Evaluating the effectiveness of different regression models
+* Predicting housing prices based on given features
+* Enhancing understanding of the relationships between variables in the housing market
+
 ## Requirements
 
 To run the code, you will need the following libraries:
@@ -29,9 +38,9 @@ To run the code, you will need the following libraries:
 - seaborn
 - scikit-learn (version lower than 1.0)
 
-**Note:** This project uses pandas version 1.5.3 instead of the latest version (2.0.0) because the `append()` function is deprecated and replaced by `concat()` in version 2.0.0. For more information, check the [pandas 2.0.0 release notes](https://pandas.pydata.org/docs/whatsnew/v2.0.0.html#deprecations).
+**Note:** This project uses pandas version 1.5.3 instead of the latest version (2.0.0) because the append() function is deprecated and replaced by concat() in version 2.0.0. For more information, check the pandas 2.0.0 release notes.
 
-The repository includes a `requirements.txt` file that lists the necessary library versions. After cloning the repository and navigating to the project root folder (boston-housing-analysis), run the following command to install the required packages:
+The repository includes a requirements.txt file that lists the necessary library versions. After cloning the repository and navigating to the project root folder (boston-housing-analysis), run the following command to install the required packages:
 
 ```bash
 pip install -r requirements.txt
@@ -63,3 +72,16 @@ housing = fetch_openml(name="house_prices", as_frame=True)
 ```
 
 To use one of these alternative datasets, replace the code that loads the Boston Housing dataset in the boston_housing_analysis.py script with one of the code snippets above. Please note that these alternative datasets have different features, so you may need to update the feature engineering, preprocessing, and visualization sections of the script accordingly.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [pandas](https://pandas.pydata.org/) - Data manipulation and analysis library
+- [numpy](https://numpy.org/) - Numerical computing library
+- [matplotlib](https://matplotlib.org/) - Plotting library
+- [seaborn](https://seaborn.pydata.org/) - Statistical data visualization library
+- [scikit-learn](https://scikit-learn.org/) - Machine learning library
+
