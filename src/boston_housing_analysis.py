@@ -59,7 +59,7 @@ print(pd.concat([boston_df.head(), boston_df.tail()]))
 
 # graphs
 
-############### heatmap ############### 
+############### heatmap ###############
 mask = np.zeros_like(boston_df.corr())
 mask[np.triu_indices_from(mask)] = True
 
@@ -182,13 +182,13 @@ from itertools import permutations
 def regression_errors(figsize, predicted, actual, errors='all'):
     ''' figsize -> subplots;
         predicted/actual data -> columns in a DataFrame
-        errors -> 'all' or sequence of indices 
+        errors -> 'all' or sequence of indices
     '''
     fig, axes = plt.subplots(1, 2, figsize=figsize,
                              sharex=True, sharey=True)
     df = pd.DataFrame({'actual':actual,
                        'predicted': predicted})
-    
+
     for ax, (x,y) in zip(axes, permutations(['actual',
                                                 'predicted'])):
         # plot the data as '.'; perfect as y=x line
@@ -196,14 +196,14 @@ def regression_errors(figsize, predicted, actual, errors='all'):
         ax.plot(df['actual'], df['actual'], '-',
                label='perfection')
         ax.legend()
-        
+
         ax.set_xlabel('{} Value'.format(x.capitalize()))
         ax.set_ylabel('{} Value'.format(y.capitalize()))
         ax.set_aspect('equal')
-        
+
     axes[1].yaxis.tick_right()
     axes[1].yaxis.set_label_position('right')
-    
+
     # show connecting bars from data to perfect
     # for all or only those specified?
     if errors == 'all':
@@ -213,7 +213,7 @@ def regression_errors(figsize, predicted, actual, errors='all'):
         preds = df.predicted.iloc[errors]
         axes[0].vlines(acts, preds, acts, 'r')
         axes[1].hlines(acts, preds, acts, 'r')
-        
+
 regression_errors((10, 5), y_predicted, boston_test_tgt, errors=[0,1,2,3,4,
                                                                  122,123,124,125,126])
 
@@ -228,20 +228,20 @@ def regression_residuals(ax, predicted, actual,
     df['error'] = df.actual - df.predicted
     ax.plot(df.predicted, df.error, '.')
     ax.plot(df.predicted, np.zeros_like(predicted), '-')
-    
+
     if right:
         ax.yaxis.tick_right()
         ax.yaxis.set_label_position('right')
         ax.set_xlabel('Predicted Value')
         ax.set_ylabel('Residual')
-        
+
     if show_errors == 'all':
         show_errors = range(len(df))
     if show_errors:
         preds = df.predicted.iloc[show_errors]
         errors = df.error.iloc[show_errors]
         ax.vlines(preds, 0, errors, 'r')
-        
+
 fig, ax= plt.subplots(1,1,figsize=(8,8))
 
 regression_residuals(ax, y_predicted, boston_test_tgt, show_errors=[0,1,2,3,4,
